@@ -31,7 +31,7 @@ def get_recordation_info(domain):
     }
 
     domain_base64 = encode_http_response_to_base64(domain)
-    url = f"https://www.mxnzp.com/api/beian/search?domain={domain_base64}&app_id=your_app_id_registered_in_this_service"
+    url = f"https://www.mxnzp.com/api/beian/search?domain={domain_base64}&app_id=qdkj6hndjrpsgnqu&app_secret=FdYFJB5Ck2X102zhxFD8MMjwAa8jbuOY"
     try:
         resp = req.get(url, headers=headers)
         result = resp.json()
@@ -57,7 +57,7 @@ def save_results(domain, data):
 
 if __name__ == "__main__":
     # domain = "gxu.edu.cn"
-    domain = "news.gxtv.cn"
+    domain = "www.gxust.edu.cn"
     domain_icp = get_recordation_info(domain)
 
     save_results(domain, domain_icp)
